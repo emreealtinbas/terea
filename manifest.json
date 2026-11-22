@@ -1,0 +1,20 @@
+{
+  "name": "Bütçe & Terea — Kişisel Finans",
+  "short_name": "Bütçe & Terea",
+  "description": "Kişisel finans, harcama takibi, tasarruf hedefleri ve Terea tüketim kontrolü uygulaması.",
+  "lang": "tr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0C0E13",
+  "theme_color": "#0C0E13",
+  "icons": [
+    {
+      "src": "./assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+/* ==========================================================================
+   ANIMATIONS — BÜTÇE & TEREA
+   Tasteful Micro-interactions, View Entrances, Stagger, Modals, Toasts & Charts
+   ========================================================================== */
+
+@keyframes viewEnter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popBump {
+  0% {
+    transform: scale(1);
+  }
+  38% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes barGrow {
+  from {
+    transform: scaleY(0);
+    opacity: 0.4;
+  }
+  to {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@keyframes ringDraw {
+  from {
+    stroke-dashoffset: var(--ring-circumference, 251.2);
+  }
+  to {
+    stroke-dashoffset: var(--ring-offset, 0);
+  }
+}
+
+/* View & Stagger Helpers */
+.anim-enter {
+  animation: viewEnter 240ms var(--ease-out) both;
+}
+
+.stagger > * {
+  opacity: 0;
+  animation: viewEnter 260ms var(--ease-out) both;
+}
+
+.stagger > *:nth-child(1) { animation-delay: 0ms; }
+.stagger > *:nth-child(2) { animation-delay: 40ms; }
+.stagger > *:nth-child(3) { animation-delay: 80ms; }
+.stagger > *:nth-child(4) { animation-delay: 120ms; }
+.stagger > *:nth-child(5) { animation-delay: 160ms; }
+.stagger > *:nth-child(6) { animation-delay: 200ms; }
+.stagger > *:nth-child(7) { animation-delay: 240ms; }
+.stagger > *:nth-child(8) { animation-delay: 280ms; }
+
+/* Counter Press Feedback */
+.anim-bump {
+  animation: popBump 220ms var(--ease-spring) both;
+}
+
+/* Modal & Toast Transitions */
+.modal-backdrop:not(.hidden) .modal-card {
+  animation: modalIn 220ms var(--ease-out) both;
+}
+
+.toast {
+  animation: toastIn 200ms var(--ease-out) both;
+}
+
+/* SVG / Chart Animation Utilities */
+.anim-bar-grow {
+  transform-box: fill-box;
+  transform-origin: bottom center;
+  animation: barGrow 420ms var(--ease-out) both;
+}
+
+.anim-ring-draw {
+  animation: ringDraw 620ms var(--ease-out) both;
+}
+
+/* Reduced Motion Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .stagger > * {
+    opacity: 1;
+  }
+}

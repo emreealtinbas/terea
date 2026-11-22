@@ -1,0 +1,209 @@
+/* ==========================================================================
+   DESIGN TOKENS — BÜTÇE & TEREA
+   Curated HSL Fintech Palette, Typography, Spacing, Radii, Elevation & Z-Index
+   ========================================================================== */
+
+:root {
+  /* Typography */
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Type Scale */
+  --text-xs: 0.75rem;      /* 12px */
+  --text-sm: 0.8125rem;    /* 13px */
+  --text-base: 0.9375rem;  /* 15px */
+  --text-md: 1rem;         /* 16px */
+  --text-lg: 1.125rem;     /* 18px */
+  --text-xl: 1.375rem;     /* 22px */
+  --text-2xl: 1.75rem;     /* 28px */
+  --text-3xl: 2.25rem;     /* 36px */
+
+  /* Spacing Scale */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+
+  /* Border Radii */
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* Layout Dimensions */
+  --sidebar-width: 264px;
+  --topbar-height: 72px;
+  --mobile-nav-height: 68px;
+  --content-max-width: 1240px;
+
+  /* Motion Curves */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast: 140ms;
+  --duration-base: 220ms;
+  --duration-slow: 360ms;
+
+  /* Z-Index Scale */
+  --z-base: 1;
+  --z-sticky: 20;
+  --z-sidebar: 30;
+  --z-mobile-nav: 35;
+  --z-fab: 38;
+  --z-modal: 50;
+  --z-toast: 60;
+  --z-tooltip: 70;
+}
+
+/* ==========================================================================
+   DARK THEME (DEFAULT)
+   Warm Deep Obsidian + Tactile Elevated Surfaces
+   ========================================================================== */
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Surfaces */
+  --bg-app: hsl(222, 18%, 6%);
+  --bg-sidebar: hsl(222, 18%, 7.5%);
+  --bg-surface: hsl(222, 17%, 10%);
+  --bg-surface-2: hsl(222, 16%, 13.5%);
+  --bg-surface-hover: hsl(222, 16%, 16%);
+  --bg-topbar: hsla(222, 18%, 6%, 0.84);
+  --bg-input: hsl(222, 18%, 8%);
+  --bg-backdrop: hsla(222, 24%, 4%, 0.72);
+
+  /* Borders & Hairlines */
+  --border-subtle: hsla(220, 20%, 88%, 0.08);
+  --border-strong: hsla(220, 20%, 88%, 0.15);
+  --border-focus: hsla(196, 82%, 48%, 0.55);
+
+  /* Typography Ink */
+  --text-primary: hsl(215, 25%, 95%);
+  --text-secondary: hsl(215, 16%, 68%);
+  --text-muted: hsl(215, 14%, 48%);
+  --text-inverse: hsl(222, 22%, 8%);
+
+  /* Curated Accents */
+  --accent-primary: hsl(196, 82%, 48%);
+  --accent-primary-hover: hsl(196, 82%, 54%);
+  --accent-primary-soft: hsla(196, 82%, 48%, 0.14);
+  --accent-primary-border: hsla(196, 82%, 48%, 0.28);
+
+  --accent-income: hsl(158, 64%, 44%);
+  --accent-income-hover: hsl(158, 64%, 50%);
+  --accent-income-soft: hsla(158, 64%, 44%, 0.14);
+  --accent-income-border: hsla(158, 64%, 44%, 0.28);
+
+  --accent-expense: hsl(350, 74%, 58%);
+  --accent-expense-hover: hsl(350, 74%, 64%);
+  --accent-expense-soft: hsla(350, 74%, 58%, 0.14);
+  --accent-expense-border: hsla(350, 74%, 58%, 0.28);
+
+  --accent-warn: hsl(38, 92%, 54%);
+  --accent-warn-soft: hsla(38, 92%, 54%, 0.14);
+  --accent-warn-border: hsla(38, 92%, 54%, 0.28);
+
+  /* Tactile Depth & Shadows */
+  --highlight-top: inset 0 1px 0 hsla(0, 0%, 100%, 0.04);
+  --highlight-top-strong: inset 0 1px 0 hsla(0, 0%, 100%, 0.07);
+  --shadow-sm: 0 2px 6px hsla(222, 40%, 2%, 0.35);
+  --shadow-card:
+    0 1px 2px hsla(222, 40%, 2%, 0.45),
+    0 8px 24px -4px hsla(222, 40%, 2%, 0.38),
+    var(--highlight-top);
+  --shadow-card-hover:
+    0 2px 4px hsla(222, 40%, 2%, 0.5),
+    0 12px 28px -4px hsla(222, 40%, 2%, 0.48),
+    var(--highlight-top-strong);
+  --shadow-modal:
+    0 24px 56px -12px hsla(222, 50%, 2%, 0.72),
+    0 0 0 1px var(--border-strong),
+    var(--highlight-top-strong);
+  --shadow-fab:
+    0 8px 20px -2px hsla(196, 82%, 20%, 0.5),
+    0 2px 6px hsla(222, 40%, 2%, 0.45);
+  --shadow-tooltip: 0 10px 28px -4px hsla(222, 40%, 2%, 0.65);
+
+  /* Chart Surfaces */
+  --chart-grid: hsla(220, 20%, 88%, 0.06);
+  --chart-track: hsl(222, 16%, 15%);
+}
+
+/* ==========================================================================
+   LIGHT THEME
+   Warm Alabaster + Crisp White Tactile Cards
+   ========================================================================== */
+[data-theme="light"] {
+  color-scheme: light;
+
+  /* Surfaces */
+  --bg-app: hsl(220, 20%, 96.5%);
+  --bg-sidebar: hsl(0, 0%, 100%);
+  --bg-surface: hsl(0, 0%, 100%);
+  --bg-surface-2: hsl(220, 18%, 95%);
+  --bg-surface-hover: hsl(220, 18%, 92%);
+  --bg-topbar: hsla(220, 20%, 96.5%, 0.86);
+  --bg-input: hsl(220, 20%, 98%);
+  --bg-backdrop: hsla(222, 28%, 12%, 0.44);
+
+  /* Borders & Hairlines */
+  --border-subtle: hsla(222, 24%, 12%, 0.08);
+  --border-strong: hsla(222, 24%, 12%, 0.16);
+  --border-focus: hsla(198, 84%, 38%, 0.45);
+
+  /* Typography Ink */
+  --text-primary: hsl(222, 28%, 12%);
+  --text-secondary: hsl(218, 15%, 40%);
+  --text-muted: hsl(218, 12%, 56%);
+  --text-inverse: hsl(0, 0%, 100%);
+
+  /* Curated Accents (Deepened for WCAG AA+ on White) */
+  --accent-primary: hsl(198, 84%, 38%);
+  --accent-primary-hover: hsl(198, 84%, 32%);
+  --accent-primary-soft: hsla(198, 84%, 38%, 0.11);
+  --accent-primary-border: hsla(198, 84%, 38%, 0.25);
+
+  --accent-income: hsl(158, 72%, 34%);
+  --accent-income-hover: hsl(158, 72%, 29%);
+  --accent-income-soft: hsla(158, 72%, 34%, 0.11);
+  --accent-income-border: hsla(158, 72%, 34%, 0.25);
+
+  --accent-expense: hsl(350, 72%, 48%);
+  --accent-expense-hover: hsl(350, 72%, 42%);
+  --accent-expense-soft: hsla(350, 72%, 48%, 0.11);
+  --accent-expense-border: hsla(350, 72%, 48%, 0.25);
+
+  --accent-warn: hsl(34, 92%, 42%);
+  --accent-warn-soft: hsla(34, 92%, 42%, 0.12);
+  --accent-warn-border: hsla(34, 92%, 42%, 0.28);
+
+  /* Tactile Depth & Shadows */
+  --highlight-top: inset 0 1px 0 hsla(0, 0%, 100%, 0.9);
+  --highlight-top-strong: inset 0 1px 0 hsla(0, 0%, 100%, 1);
+  --shadow-sm: 0 1px 3px hsla(222, 24%, 12%, 0.06);
+  --shadow-card:
+    0 1px 2px hsla(222, 24%, 12%, 0.05),
+    0 6px 18px -4px hsla(222, 24%, 12%, 0.06),
+    var(--highlight-top);
+  --shadow-card-hover:
+    0 2px 4px hsla(222, 24%, 12%, 0.07),
+    0 10px 24px -4px hsla(222, 24%, 12%, 0.09),
+    var(--highlight-top-strong);
+  --shadow-modal:
+    0 24px 48px -12px hsla(222, 28%, 12%, 0.2),
+    0 0 0 1px var(--border-subtle);
+  --shadow-fab:
+    0 8px 20px -2px hsla(198, 84%, 38%, 0.35),
+    0 2px 6px hsla(222, 24%, 12%, 0.14);
+  --shadow-tooltip: 0 10px 24px -4px hsla(222, 24%, 12%, 0.16);
+
+  /* Chart Surfaces */
+  --chart-grid: hsla(222, 24%, 12%, 0.07);
+  --chart-track: hsl(220, 18%, 90%);
+}
